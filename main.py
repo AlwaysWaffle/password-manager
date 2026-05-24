@@ -3,11 +3,13 @@
 # Библиотеки:
 #   sys, pathlib.Path  — выход при ошибке, путь к файлу БД
 #   telebot            — pyTelegramBotAPI, обёртка над Telegram Bot API
+#   telebot.apihelper  — proxy (socks5 для обхода блокировок)
 
 import sys
 from pathlib import Path
 
 import telebot
+from telebot import apihelper
 
 import config
 import database
@@ -40,6 +42,9 @@ def main():
     logger.log_info("База данных готова")
 
     bot = telebot.TeleBot(config.BOT_TOKEN)
+    # Собираем URL прокси 
+    PROXY_URL = f"{config.PROXY_TYPE}://{config.PROXY_HOST}:{config.PROXY_PORT}"
+    apihelper.proxy = {"https": PROXY_URL} # Настройка прокси для Telegram API
     
     try:
         bot.remove_webhook()  # иначе polling может не получать сообщения

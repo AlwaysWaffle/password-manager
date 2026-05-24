@@ -5,6 +5,11 @@
 # Токен от @BotFather — бот ходит в Telegram API с этим ключом
 BOT_TOKEN = "ВАШ_ТОКЕН"
 
+# Настройки прокси (для работы Telegram в России)
+PROXY_TYPE = "ВАШ_ПРОТОКОЛ"   
+PROXY_HOST = "ВАШ_IP_ПРОКСИ" 
+PROXY_PORT = "ВАШ_ПОРТ_ПРОКСИ" 
+
 # Файл SQLite на диске (создаётся сам при первом запуске)
 DB_PATH = "passwords.db"
 
