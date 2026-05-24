@@ -1,0 +1,13 @@
+certifi==2026.4.22
+cffi==2.0.0
+charset-normalizer==3.4.7
+cryptography==46.0.7
+idna==3.13
+packaging==26.1
+pycparser==3.0
+PySocks==1.7.1
+pyTelegramBotAPI==4.33.0
+requests==2.33.1
+setuptools==82.0.1
+urllib3==2.6.3
+wheel==0.47.0
